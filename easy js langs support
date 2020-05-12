@@ -3,21 +3,21 @@ function translate(temp, lang) {
 	var obj = {
 		"%%String 1%%": {
 			ru: "Строка №1",
-      ua: "Строка #1",
+      		ua: "Строка #1",
 		},
 		"%%Text 2%%": {
 			ru: "Текст №2",
-      ua: "Текст #2",
-		}
+      		ua: "Текст #2",
+		},
 	};
 
   var regex;
-	var text = temp;
+  var text = temp;
   for (var i in obj) {
-      regex = new RegExp(i, "gi");
-	    if (typeof obj[i][lang] !== "undefined")
-          text = text.replace(regex, obj[i][lang]);
-  }
+		regex = new RegExp(i, "gi");
+		if (typeof obj[i][lang] !== "undefined")
+			text = text.replace(regex, obj[i][lang]);
+	}
 
 	return text.replace(new RegExp("%%([^%]+)%%", "gi"),"$1");
 }
