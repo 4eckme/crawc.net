@@ -1,0 +1,6 @@
+#!/bin/bash
+# |\ _ /| #
+# ! 0 0 ! #
+# > =I= < #
+# crawcat #
+node srv.js
