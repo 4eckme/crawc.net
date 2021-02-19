@@ -1594,9 +1594,10 @@ io.sockets.on("connection", function(socket) {
                                                 else pwd = '';
                                                 
                                                 where = 'FALSE';
-                                                if (msg_action.room_id == 95) where="ub.id>=1188 AND ub.id<=1206";
-                                                else if(msg_action.room_id == 93) where="ub.id>=1207 AND ub.id<=1220";
-                                                else if(msg_action.room_id == 39) where="ub.id>=1221 AND ub.id<=1227 OR ub.id=1293";
+                                                // онлайн-боты
+						//if (msg_action.room_id == 95) where="ub.id>=1188 AND ub.id<=1206";
+                                                //else if(msg_action.room_id == 93) where="ub.id>=1207 AND ub.id<=1220";
+                                                //else if(msg_action.room_id == 39) where="ub.id>=1221 AND ub.id<=1227 OR ub.id=1293";
                                                 
                                                 connection.query(
 
