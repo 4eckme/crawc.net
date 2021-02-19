@@ -1,0 +1,5 @@
+Sitemap: https://crawc.net/sitemap.xml
+Disallow: /ru/readonly
+Disallow: /ru/readonly/
+Disallow: /en/readonly
+Disallow: /en/readonly/
