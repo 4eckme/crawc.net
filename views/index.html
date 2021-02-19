@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="%%en%%" style="height:100%;">
+    <head>
+        
+        <title>Crawc</title>
+        
+        <!-- 
+        
+        ■ webchat crawc.net ■
+        m ■ ■ ■ ■ ■ ■ ■ ■ ■ f
+        u ■ ◸ ◢ ■ ■ ■ ◣ ◹ ■ r
+        l ■ ◢ ◤ ▷ ▽ ◁ ◥ ◣ ■ e
+        t ■ ■ ▽ ◢ ■ ◣ ▽ ■ ■ e
+        i ■ ■ ▷ ■ ❂ ■ ◁ ■ ■ t
+        l ■ ■ △ ◥ ■ ◤ △ ■ ■ a
+        a ■ ◥ ◣ ▷ △ ◁ ◢ ◤ ■ l
+        n ■ ◺ ◥ ■ ■ ■ ◤ ◿ ■ k
+        g ■ ■ ■ ■ ■ ■ ■ ■ ■ s
+        ■ created by gray25 ■
+        
+        -->
+        
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <meta name="description" content="%%description%%">
+        <meta name="keywords" content="%%keywords%%">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=0.6, maximum-scale:0.6, minimum-scale:0.6">
+        <link rel="manifest" href="/manifest.json">
+        
+        <meta name="yandex-verification" content="cd5adb3cbcfa752e" />
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+         
+        <script src="/js/jquery.js"></script>
+        <script src="/js/jquery-ui.min.js"></script>
+        <script src="/js/jquery.ui.touch-punch.min.js"></script>
+        
+        <script src="/js/hashchange.js"></script>
+        
+        <script src="https://crawc.net/socket.io/socket.io.js"></script>
+        
+        <script src="/js/main2.js"></script>
+        <!-- script src="js/client.js"></script -->
+        
+        
+        <link href="/css/colorpicker.css" rel="stylesheet">
+        <script src="/js/bootstrap-colorpicker.js"></script>
+        
+        <link href="/css/gp-gallery.css" rel="stylesheet">
+        <script src="/js/gp-gallery.js"></script>
+        <script src="/js/gp-gallery.js"></script>
+        <script src="/js/touch-scroll.min.js"></script>
+        
+        <script src="/js/jquery.form.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/jquery-ui.min.css">
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/cs2.css">
+        <link rel="stylesheet/less" type="text/css" href="/css/styles2.less" />
+        
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.css">
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/theme/monokai.css">
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/mode/xml/xml.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/2.36.0/formatting.js"></script>
+        <!-- include summernote css/js -->
+        <link href="/css/summernote-lite.css" rel="stylesheet">
+        <script src="/js/summernote-lite.js"></script>
+        
+        <script src="/datepicker/js/bootstrap-datepicker.js"></script>
+        <link rel="stylesheet" href="/datepicker/css/datepicker.css">
+        <script src="/datepicker/locales/bootstrap-datepicker.ru.min.js" charset="UTF-8"></script>
+        
+        <style>
+ html,body {margin:0;padding:0;height:100%;width:100%;}
+.main_wrapper {display: flex;margin: auto;width:100%;height: 100%;overflow: hidden;flex-direction:column;}
+.top {position: relative;top: 0;min-height: 50px;width: 100%;overflow: hidden;}
+.center {flex:1;width:100%;overflow-y: auto;display:flex;flex-direction:row;}
+.left{position:relative;flex:1;display:flex;flex-direction:column;}
+.right {left:0;max-width:300px;flex:1;display:flex;flex-direction:column;}
+.area{flex:1;display:flex;flex-direction:column-reverse;}
+.message{width:100%;min-height:10px;}
+.msg{top:0;position:relative;flex:1;max-height:80px;}
+.top,.right{padding: 12px 18px;}
+.right{padding:0;}
+.top{    border-bottom: 1px solid #ddd; padding: 12px 18px 3px 18px}
+        </style>
+    </head>
+    <body style="height:100%;">
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+           m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+           ym(62336815, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true
+           });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/62336815" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+        <div class="mc main_wrapper" style="width:100%; min-width:100%; min-height: 100%; height:100%">
+                                <div class="top"><a href="/ru/"><div class="flag ruflag fgray" title="Russian Edition"></div></a><a href="/en/"><div class="flag enflag fgray" title="English Edition"></div></a><table style="width:100%;"><tr><td><div class="tabsrooms"></div><div class="tabsdialogs"></div><div class="tabline-button newroom">+</div><div class="tabline-button allrooms">
+                <span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="
+                    font-size: 18px;
+                    position: relative;
+                    top: 4px;
+                    left: -1px;
+                    color: #555;
+                "></span>
+                            </div></td>
+                <td class="hc" style="width:450px;vertical-align:top;">
+                                <div id="logout-btn" class="btn-logout glyphicon glyphicon-off"></div>
+                                <div class="btn btn-danger btn-options" onclick="">Settings</div>
+                                <div onclick="editAnketa()" class="btn btn-success btn-anketa">Friends</div>                                
+                </td></tr></table></div>
+           <div class="center">
+               <!--noindex--><div id="counter" style="position: absolute; bottom: 10px;width: 100%;text-align: right;padding-right: 10px;">
+                   <a href="#Рисовач" style="
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    top: 3px;
+    right: 20px;
+    text-decoration: none !important;
+">Рисовач</a>
+                   <!--LiveInternet counter--><script type="text/javascript">
+            document.write('<a href="//www.liveinternet.ru/click" '+
+            'target="_blank"><img src="//counter.yadro.ru/hit?t40.6;r'+
+            escape(document.referrer)+((typeof(screen)=='undefined')?'':
+            ';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?
+            screen.colorDepth:screen.pixelDepth))+';u'+escape(document.URL)+
+            ';h'+escape(document.title.substring(0,150))+';'+Math.random()+
+            '" alt="" title="LiveInternet" '+
+            'border="0" width="31" height="31"><\/a>')
+            </script><!--/LiveInternet-->
+                   
+                   </div><!--/noindex-->
+               <div class="left">
+                   
+                   <div class="area">
+                       <form id="uploadone" method="post" action="/uploadone" enctype="multipart/form-data"><input type="file" accept="image/jpeg,image/png,image/gif" name="file" style="display:none;"></form>
+                   </div>
+                   <div class="msg"><table><tr><td class="formessage" style="padding: 10px 0 10px 20px;">
+                                   <div class="glyphicon glyphicon-picture uploadicon"></div>
+                                   <div id="rec" class="rec glyphicon glyphicon-record"></div>
+                                   <div class="btn-smiles"><div class="all-smiles"><center><span data-code="(:smile:)" class="smile"></span><span data-code="(:wink:)" class="smile"></span><span data-code="(:devil:)" class="smile"></span><span data-code="(:coffe:)" class="smile"></span><span data-code="(:happy:)" class="smile"></span><span data-code="(:closed-eyes:)" class="smile"></span><span data-code="(:surprise:)" class="smile"></span><span data-code="(:cool:)" class="smile"></span><span data-code="(:angry:)" class="smile"></span><span data-code="(:shoot:)" class="smile"></span><span data-code="(:sad:)" class="smile"></span><span data-code="(:tongue:)" class="smile"></span><span data-code="(:unclear:)" class="smile"></span><br><span data-code="(:saint:)" class="smile"></span><span data-code="(:nyasha:)" class="smile"></span><span data-code="(:sleep:)" class="smile"></span><span data-code="(:super:)" class="smile"></span><span data-code="(:beer:)" class="smile"></span><span data-code="(:cry:)" class="smile"></span><br><span class="smile je" onclick="japanse(); return false;">japanse emoji</span></center></div></div>
+                                   <textarea style="resize:none;" id="msgtxt" class="form form-control"></textarea></td><td class="forbutton" style="width:180px;padding:11px 20px 11px 15px;"><button class="sendbtn btn btn-success">Send</button></td></tr></table></div>
+               </div>  
+               <div class="right"></div>
+           </div>
+        </div>
+    </body>
+</html>
