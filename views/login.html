@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="%%en%%">
+    <head>
+        <meta charset="utf-8">
+        <title>%%title%%</title>
+        
+        <!-- 
+        
+        ■ webchat crawc.net ■
+        m ■ ■ ■ ■ ■ ■ ■ ■ ■ f
+        u ■ ◸ ◢ ■ ■ ■ ◣ ◹ ■ r
+        l ■ ◢ ◤ ▷ ▽ ◁ ◥ ◣ ■ e
+        t ■ ■ ▽ ◢ ■ ◣ ▽ ■ ■ e
+        i ■ ■ ▷ ■ ❂ ■ ◁ ■ ■ t
+        l ■ ■ △ ◥ ■ ◤ △ ■ ■ a
+        a ■ ◥ ◣ ▷ △ ◁ ◢ ◤ ■ l
+        n ■ ◺ ◥ ■ ■ ■ ◤ ◿ ■ k
+        g ■ ■ ■ ■ ■ ■ ■ ■ ■ s
+        ■ created by gray25 ■
+        
+        -->
+        
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <meta name="description" content="%%description%%">
+        <meta name="keywords" content="%%keywords%%">
+        <link rel="manifest" href="/manifest.json">
+        
+        <meta name="yandex-verification" content="cd5adb3cbcfa752e" />
+        
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=0.4, maximum-scale:0.4, minimum-scale:0.4">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+         
+        <script src="/js/jquery.js"></script>
+        <script src="/js/jquery-ui.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <script src="/datepicker/js/bootstrap-datepicker.js"></script>
+        
+        <link rel="stylesheet" href="/datepicker/css/datepicker.css">
+        <script src="/datepicker/locales/bootstrap-datepicker.ru.min.js" charset="UTF-8"></script>
+        <!-- link href="https://fonts.googleapis.com/css?family=Lalezar&display=swap" rel="stylesheet" -->
+        
+        <script src="/js/jquery.form.min.js"></script>
+        
+        
+        <style>
+ html{overflow:auto;padding-bottom:80px !important;}
+ html,body {margin:0;padding:0;height:100%;width:100%;min-width:100%;min-height:100%;}
+ body{display: flex;justify-content: center; align-items: center;background: #4fbbf3;}
+ body.mobile, body.mobile .form-control, body.mobile .btn, body.mobile a{font-size:24px !important;}
+ body.mobile #reglink {
+    margin: 10px 0 0 -25px !important;
+    position: relative;
+    left: 10px;
+ }
+ body.mobile .aboutchat {
+    text-align: justify;
+    font-size: 20px !important;
+}
+ body.mobile .aboutlink
+ {
+    margin-top: 10px;
+    display: block;
+ }
+ .ib {width:100%;}
+ .rowmain { position: absolute;
+    min-height: 100px;
+    width: 370px;
+    box-shadow: 0px 0 0 24px #fff, 0px 0 0 28px #00000085, 0px 16px 40px 32px #000000a8;
+    /* border-radius: 0.005px; */
+    background: #fff;
+    z-index:10;
+ }
+ .lbl {padding-bottom:8px;color:#333;}
+ .fc1 {margin-right:5px;}
+ .form-control{border-radius: 2px;}
+h1 {
+    margin-top: 6px;
+    margin-bottom: 14px;
+    color: #222;
+    font-size: 30px;
+}
+ a{cursor: pointer;}
+ .left {float:left;}
+ .right {float:right;}
+ .clear {clear:both;}
+ .br {height:14px;}
+ .br2 {height: 12px;}
+ .w100 {width:370px;}
+ .avatar {cursor:pointer;}
+ .bb {width: 100px;}
+ .inputfix {
+    display: block;
+    border-color: #fff;
+    box-shadow: none;
+    cursor: default !important;
+    background: #fff !important;
+    color: #0b6990;
+ }
+ input.alert-danger{ 
+    background: #ffecec;
+    border-color: #faa;
+    color: #af2e2e;
+ }
+ input.alert-danger:focus{
+    border-color: #e27575 !important;
+    box-shadow: inset 0 1px 1px #e2757587, 0 0 8px #e2757587 !important;
+ }
+ button, input{
+    outline:0 none !important;
+ }
+ .rowmain.expand{
+     width: 440px;
+ }
+  .rowmain.expand .form-control{
+     width: 440px;
+ }
+   .rowmain.expand textarea{
+     height: 100px;
+ }
+    .rowmain.expand .reglogin{
+     width: 250px;
+ }
+
+      .rowmain.expand .w100{
+     width: 440px;
+ }
+       .rowmain.expand .ochoba{
+        float:right;
+    display: flex;
+    flex-direction: column;
+        padding-left: 36px;
+ }
+ .rowmain.expand .ochoba .bb{
+     width: 125px;
+ }
+        .rowmain.expand .ochoba .right{
+        float:none;
+ }
+ .avatar{
+    background: #fafafa;
+    background-size: contain !important;
+    width: 150px;
+    height: 150px;
+    font-size: 120px;
+    line-height: 150px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #00000029;
+    box-shadow: inset 0 0 1px #00000025;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bb.selected{
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+.btn.freebtn:active{background:none !important;}
+
+.ruflag {
+    position: absolute;
+    right: 0;
+    background: url(/ru.png);
+}
+
+.enflag {
+    float: right;
+    margin-right:50px;
+    background: url(/en.png);
+    background-size: cover !important;
+}
+
+.fgray {
+    filter: gray;
+    -webkit-filter: grayscale(1);
+            
+}
+
+.flag {
+    padding:4px;
+    box-shadow: 0 0 0 1px #fff, 0 0 0 2px #000;
+    height: 22px;
+    width: 32px;
+    background-size: contain;
+}
+
+.aboutchat{text-align: justify;}
+a.aboutlink {margin-left: 10px;}
+a.aboutlink span:hover {}
+a.aboutok{font-size:16px;float:right;}
+#welcome{position: fixed;top:0;width:480px;padding:20px;margin-top:20px;z-index:10000;background:#fff;box-shadow:0px 2px 16px #000;border-radius:10px;background:#000;color:#fff;display:none;}
+.rowmain.description, .rowmain.description .w100{
+    width: 640px !important;
+}
+iframe.chat{
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border: none;
+}
+iframe.chat.adv{
+    padding-bottom: 120px;
+}
+#yadv{background:#fff;position:fixed;width:100%;bottom:0;}
+.optional{background:#f4f4f4;display: none;padding:10px 20px;}
+.btn-optional{background: #f4f4f4; padding:10px 20px;}
+.rowmain.expand .optional .w100{
+     width: 100%;
+ }
+ #captcha-frame {
+     cursor: pointer;
+ }
+ .adv-x{
+     position: absolute;
+     right: 0;
+     margin: 10px;
+     cursor: pointer;
+     z-index: 1000;
+ }
+ a.demo:hover {
+    color: #333 !important;
+ }
+ body.mobile a.demo {
+    position: relative;
+    top: -75px;
+    left: -22px;
+}
+#id-592323-3{
+    margin-top:60px;
+}
+        </style>
+        <script>
+            
+            var colors=0;
+            
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        console.log(e.target.result);
+                        window.avatar = e.target.result;
+                        $('.avatar').attr('style', 'background-image:url("'+e.target.result+'");');
+                        $('.inputavatar').val(e.target.result);
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            
+            $(document).ready(function() {
+                
+                $('.demo').attr('href', 'readonly/'+location.hash);
+                
+                window.adv=false;
+                
+                $('.boa').click(function() {
+                    $('.optional').toggle();
+                    $('.btn-optional .glyphicon').toggleClass('glyphicon-chevron-down');
+                    $('.btn-optional .glyphicon').toggleClass('glyphicon-chevron-up');
+                })
+                
+                setTimeout(function(){
+                    $('#welcome').show();
+                    $('#welcome').click(function(){
+                        return false;
+                    })
+                    $('#wx, .rowmain, body').click(function(){
+                        $('#welcome').hide();
+                    })
+                }, 5000);
+                
+                $('body').prepend('<iframe id="frame" class="chat" src="readonly'+location.hash+'"></iframe>');
+                
+                setInterval(function(){
+                    colors += 2;
+                    $('iframe.chat').attr("style", "filter:opacity(0.8) blur(1px) hue-rotate("+colors+"deg)");
+                }, 20);
+                
+                setInterval(function(){
+                    
+                    if ($('#yandex_rtb_R-A-592323-2').html() && window.adv == false) {
+                        window.adv=true;
+                        $('#yadv').attr('style', 'height:120px;');
+                        $('iframe.chat').addClass('adv');
+                    }
+                    
+                }, 100);
+                
+                $('#adv-x').click(function() {
+                    $('#yadv').attr('style', 'height:0px;');
+                    $('iframe.chat.adv').removeClass('adv');
+                })
+                
+                
+                    if (typeof window.orientation !== 'undefined')
+                            $('body').addClass('mobile');
+                
+                
+                $('.'+$('html').attr('lang')+'flag').removeClass('fgray');
+                
+                $('.flag').mousemove(function() {
+                    $(this).removeClass('fgray');
+                    $('.flag').not($(this)).addClass('fgray').animate(500);
+                });
+                $('.flag').mouseout(function() {
+                    $(this).addClass('fgray')
+                    $('.'+$('html').attr('lang')+'flag').removeClass('fgray');
+                });
+               
+                setInterval(function() {
+                    var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+                    var height = (window.innerHeight > 0) ? window.innerHeight : screen.height;
+                    $('html').css({'height':height+'px'});
+                    $("body").css({ zoom: 1, transform: "scale(1)", transformOrigin: "0 0", 'height':height+'px'});
+
+                    return false;
+            
+                }, 100);
+               
+                var getUrlParameter = function getUrlParameter(sParam) {
+                    var sPageURL = window.location.search.substring(1),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+                    for (i = 0; i < sURLVariables.length; i++) {
+                        sParameterName = sURLVariables[i].split('=');
+
+                        if (sParameterName[0] === sParam) {
+                            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                        }
+                    }
+                }
+                
+                $("textarea").dblclick(function() {
+                    //$('.rowmain').toggleClass('expand');
+                });
+                
+                $('.regbirth').datepicker({
+                        format: "yyyy-mm-dd",
+                        startView: 2,
+                        language: "ru",
+                        orientation: "bottom right",
+                        daysOfWeekHighlighted: "0,6"
+                });
+                
+                $('.bbm').click(function() {
+                    $('.bbm').addClass('selected');
+                    $('.bbf').removeClass('selected');
+                    $('#regsex').val(1);
+                });
+                $('.bbf').click(function() {
+                    $('.bbf').addClass('selected');
+                    $('.bbm').removeClass('selected');
+                    $('#regsex').val(0);
+                });
+
+                
+                function login() {
+                    $.ajax({
+                        url:'/act',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            act: 'auth',
+                            name: $('.uname0').val(),
+                            pass: $('#pwd').val(),
+                            remember_me: $('#remember_me').is(':checked') ? 'remember' : '',
+                            version: getUrlParameter('version'),
+                            captcha:$('#captcha-login').val()
+                        },
+                        success: function(data) {
+                            
+                            
+                            if (data.success == 0 && data.error == "captcha") {
+                                $('#captcha-login').val('');
+                                $('#captcha-login').addClass('alert-danger');
+                                $('#captcha-frame-login').click();
+                            } else if (data.success == 0) {
+                                $('#pwd').addClass('alert-danger');
+                                $('#captcha-login').val('');
+                                $('#captcha-login').removeClass('alert-danger');
+                                $('#captcha-frame-login').click();
+								if (confirm('Если у Вас нет аккаунта, Вы можете завести его. Создать нового пользователя?')) {
+									$('#reglink').click();
+								}
+                            } else {
+                                location.reload();
+                            }
+                        }
+                    });
+                }
+                
+                $('#reglink').click(function() {
+                    $("#auth").hide();
+                    $("#reg").toggleClass('hidden');
+                    $('.rowmain').addClass('expand');
+                    $('.reglogin').val($('.uname0').val());
+                    $('.regpass').val($('#pwd').val());
+                    $('.regpass2').val($('#pwd').val());
+                });
+                
+                $('#loginbtn').click(function() {
+                    login();
+                });
+                
+                
+                $('.uname0').keydown(function(e) {
+                    if(e.which == 10 || e.which == 13) {
+                        $('#pwd').focus();
+                    }
+                });
+                
+                
+                $('#pwd').keydown(function(e) {
+                    if(e.which == 10 || e.which == 13) {
+                        login();
+
+                    }
+                });
+                
+                $('#pwd').on('input', function(e) {
+                    if (!window.pwd_prev) {
+                        window.pwd_prev = $('#pwd').val();
+                    } else if (window.pwd_prev != $('#pwd').val()) {
+                        window.pwd_prev = $('#pwd').val();
+                        $('#pwd').removeClass('alert-danger');
+                    }
+                    
+                });
+                
+                $('.avatar').click(function() {
+                    $('#regavatar').click();
+                });
+                $('#regavatar').change(function(data) {
+                    readURL(this);
+                    $('.avatar').removeClass('glyphicon-camera');
+                    console.log($('#regavatar').val());
+                });
+                
+                $('#reg .reg1btn').click(function() {
+                    $('#reg').hide();
+                    $('#reg2').removeClass('hidden');
+                    $('.rowmain').removeClass('expand');
+                });
+                
+                $('#reg2 .reg2btn').click(function() {
+                    $('#reg .regmail').val($('#reg2 .regmail').val());
+                    $.ajax({
+                        url:'/reg',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            nickname:$('.reglogin').val(),
+                            email:$('.regmail').val(),
+                            avatar:window.avatar,
+                            city:$('.regcity').val(),
+                            sex:$('#regsex').val(),
+                            datebirth:$('.regbirth').val(),
+                            aboutme:$('.regabout').val(),
+                            password:$('.regpass').val(),
+                            password2:$('.regpass2').val(),
+                            captcha:$('#captcha').val()
+                        },
+                        success: function(data) {
+                            console.log('data');
+                            if (data.success == 0) {
+                                console.log(data.error);
+                                $('#captcha').val('');
+                                $('#captcha-frame').click();
+                                if ($.inArray('captcha', data.error) >= 0) {
+                                    $('.backbtn').click();
+                                    $('#captcha').addClass('alert-danger');
+                                } else {
+                                    $('#captcha').removeClass('alert-danger');
+                                }
+                                if ($.inArray('nickname', data.error) >= 0) {
+                                    $('.backbtn').click();
+                                    $('.reglogin').addClass('alert-danger');
+                                }
+                                if ($.inArray('password', data.error) >= 0) {
+                                    $('.backbtn').click();
+                                    $('.regpass').addClass('alert-danger');
+                                }
+                                if ($.inArray('password2', data.error) >= 0) {
+                                    $('.backbtn').click();
+                                    $('.regpass2').addClass('alert-danger');
+                                }
+                                if ($.inArray('email', data.error) >= 0) {
+                                    $('.regmail').addClass('alert-danger');
+                                }
+                                
+                            } else {
+                                location.reload();
+                            }
+                        }
+                    });
+                    /*
+                    $('#reg').ajaxSubmit({dataType: 'json', success: function(data) {
+                            
+                    }});*/
+                });
+                
+                $('.reglogin, .regpass, .regpass2, .regmail').keydown(function() {
+                    $(this).removeClass('alert-danger');
+                })
+                /*
+                $('#reg2 .freebtn').click(function() {
+                    $('#reg').ajaxSubmit({dataType: 'json', success: function(data) {
+                            
+                    }});
+                });
+        
+                */
+               
+               $(".captcha-frame").each(function () {
+                //Using closures to capture each one
+                var iframe = $(this);
+                iframe.on("load", function () { //Make sure it is fully loaded
+                    
+                    $("#captcha-frame").contents().find("svg").css('cursor', 'pointer');
+                    
+                    iframe.contents().click(function (event) {
+                        iframe.trigger("click");
+                    });
+                });
+
+                iframe.click(function () {
+                    console.log('captcha reload');
+                    $('#captcha-frame').attr('src', $('#captcha-frame').attr('src'));;
+                });
+                });
+                
+                $(".captcha-frame-login").each(function () {
+                //Using closures to capture each one
+                var iframe = $(this);
+                iframe.on("load", function () { //Make sure it is fully loaded
+                    
+                    $("#captcha-frame-login").contents().find("svg").css('cursor', 'pointer');
+                    
+                    iframe.contents().click(function (event) {
+                        iframe.trigger("click");
+                    });
+                });
+
+                iframe.click(function () {
+                    console.log('captcha reload');
+                    $('#captcha-frame-login').attr('src', $('#captcha-frame-login').attr('src'));;
+                });
+                });
+               
+                $('.cancelbtn').click(function() {
+                    $("#auth").show();
+                    $("#reg").addClass('hidden');
+                    $('.rowmain').removeClass('expand');
+                });
+                
+                $('.backbtn').click(function() {
+                    $("#reg").show();
+                    $("#reg2").addClass('hidden');
+                    $('.rowmain').addClass('expand');
+                });
+                
+                
+            });
+        </script>
+    </head>
+    
+    <body style="width:100%; min-width:100%; min-height: 100%; height:100% !important">
+        <div id="yadv">
+            <div id="adv-x" class="adv-x glyphicon glyphicon-remove"></div>
+                <!-- Yandex.RTB R-A-592323-2 -->
+                <div id="yandex_rtb_R-A-592323-2"></div>
+                <script type="text/javascript">
+                    (function(w, d, n, s, t) {
+                        w[n] = w[n] || [];
+                        w[n].push(function() {
+                            Ya.Context.AdvManager.render({
+                                blockId: "R-A-592323-2",
+                                renderTo: "yandex_rtb_R-A-592323-2",
+                                async: true
+                            });
+                        });
+                        t = d.getElementsByTagName("script")[0];
+                        s = d.createElement("script");
+                        s.type = "text/javascript";
+                        s.src = "//an.yandex.ru/system/context.js";
+                        s.async = true;
+                        t.parentNode.insertBefore(s, t);
+                    })(this, this.document, "yandexContextAsyncCallbacks");
+                </script>
+        </div>
+        
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+           m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+           ym(62336815, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true
+           });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/62336815" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+        <img src="/logo.png" style="display:none;">
+        <div id="welcome"><p>
+                <a style="font-wegigh:bold;float:right;color:#fff !important;" id="wx"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a><strong style="color: #ffe8a1;">Привет!</strong><br><br>
+               Сейчас тут мало онлайн, но<br>
+               <strong>каждый день чат посещает около 100 человек,</strong><br>
+               которые хотят с тобой пообщаться.<br><br>
+               Оснавная чат-комната: <strong style="color: #ea65b3;">¢ґ@ẘ¢▣η€☂</strong> - все там.
+        </p></div>
+    <div class="rowmain">
+        <a href="/ru/"><div class="flag ruflag fgray" title="Russian Edition"></div></a><a href="/en/"><div class="flag enflag fgray" title="English Edition"></div></a>
+        <div class="ib w100">
+            <form id="auth" class="" role="search">
+                <div class="lbl"><h1>%%Enter the chat%%</h1></div>
+                <div class="form-group">
+                    <input type="text" class="uname0 form form-control fc1" placeholder="%%Your name%%" style="    font-size: 16px;    padding: 18px 14px;">
+                    <div id="pwdinput">
+                        <div class="clear br"></div>
+                        <input type="password" id="pwd" class="form form-control fc1" placeholder="%%Your password%%" style="    font-size: 16px;    padding: 18px 14px;margin-bottom:15px;">
+                    </div>
+                    
+                    <div style="float:right;width:100%;"><input placeholder="captcha" type="text" id="captcha-login" class="form form-control" style="padding: 18px 14px;font-size:16px;width:120px;float: left;/* margin-top:12px; */"><iframe src="/captcha_login" id="captcha-frame-login" class="captcha-frame-login" style="width:84px;height:50px;float: left;overflow:hidden;border:0;margin-left: 16px;margin-top: -12px;"></iframe><input id="loginbtn" value="Войти" type="button" class="btn btn-success" style="float: right;/* margin: 10px 0 10px 0; */"></div>
+                    
+                    <div class="clear br"></div>
+                    <div style="float: right;font-size: 16px;margin: 10px 0 0 17px;padding-left: 90px;margin-bottom: 40px;"><div class="btn btn-default" id="reglink">Регистрация</div>
+                        <div style="
+                            position: absolute;
+                            left: 0;
+                            float:;
+                            color: #ccc;
+                            font-weight: bold;
+                            font-size: 18px;
+                            margin-top: 16px;
+                        "><span class="glyphicon glyphicon-ok" aria-hidden="true" style="
+                            color: #5db855;
+                            margin-right: 12px;
+                        "></span>Регистрация в 2 клика</div>
+                    </div>
+                    <div style="    float: left;    position: absolute;    margin-top: 17px;    font-size: 16px;"><a class="aboutlink" onclick="$('.aboutchat').removeClass('hidden');$('#auth').addClass('hidden');$('.rowmain').addClass('description');">Про чат</a><a class="demo" href="readonly/" style="margin-left: 32px;color: #555;">Демо</a></div>
+                </div>
+                <script async src="https://yastatic.net/pcode-native/loaders/loader.js"></script>
+                <script>
+                    (yaads = window.yaads || []).push({
+                        id: "592323-3",
+                        render: "#id-592323-3"
+                    });
+                </script>
+                <div id="id-592323-3"></div>
+
+            </form>
+            <div class="aboutchat hidden">%%{content}%%</div>
+            <form id="reg" method="post" action="/reg" class="hidden" enctype="multipart/form-data" role="search">
+                <div class="lbl"><h4>%%Register a new user%%</h4></div>
+                <div class="clear br2"></div>
+                <div class="avatar left glyphicon glyphicon-camera"><img src=""></div>
+                <div class="ochoba">
+                    <input type="hidden" class="regmail" name="email">
+                    <input type="hidden" id="regsex" class="regsex" name="sex">
+                    <input type="file" id="regavatar" class="regavatar" style="display:none;" name="ava">
+                    <input type="hidden" id="regava" class="inputavatar" style="display:none;" name="avatar">
+                    <div class="form-group left" style="margin-left:0;float:right;">
+                        <div class="lbl" style="">%%Enter your name%% <span style="color: #ff5b51;font-size: 18px;line-height: 0;">*</span></div>
+                        <div class="btn-group right" style="width:200px;" role="group" aria-label="...">
+                            <input class="reglogin form form-control" name="nickname" type="text">
+                        </div>
+                    </div>
+                    <div class="form-group left" style="float:right;">
+                        <div class="lbl" style="margin-top:6px;">%%Change your sex%% <span style="color: #ff5b51;font-size: 18px;line-height: 0;">*</span></div>
+                        <div class="btn-group right" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default bb bbm">%%Male%%</button>
+                            <button type="button" class="btn btn-default bb bbf">%%Female%%</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear br"></div>
+                <div style="border:1px solid #d8d8d8;"><a class="boa"><div class="btn-optional"><span class="glyphicon glyphicon-chevron-down" style="float:right;" aria-hidden="true"></span>Вы можете дополнить анкету</div></a>
+                <div class="optional">
+                    <table style="width:100%;"><tr>
+                        <td style="width:50%;padding-right:8px">
+                            <div class="lbl">%%Your city%%</div>
+                            <input type="text" class="regcity form form-control w100">
+                        </td>
+                        <td style="width:50%;padding-left:8px;">
+                            <div class="lbl">%%Your birth date%%</div>
+                            <input type="text" class="regbirth form form-control w100">
+                            <td>
+                    </tr></table>
+                    <div class="clear br"></div>
+                    <div class="lbl">%%About you%%</div>
+                    <textarea name="aboutme" class="regabout form form-control w100" placeholder="%%You can leave this field blank%%" style="min-height: 76px;max-height: 300px;resize: vertical;min-width: 370px;max-width:900px;"></textarea>
+                    <div class="clear br"></div>
+                </div></div>
+                <div class="clear br"></div>
+                <div class="lbl">%%Your password 2%% <span style="color: #ff5b51;font-size: 18px;line-height: 0;">*</span></div>
+                <input type="password"  name="password" class="regpass form form-control fc1 w100" placeholder="%%At least 6 characters%% "><div class="clear br2"></div>
+                <input type="password"  name="password2" class="regpass2 form form-control fc1 w100" placeholder="%%Repeat password%%">
+                <div style="float:left;height:25px;"><iframe id="captcha-frame" class="captcha-frame" src="/captcha" style="height: 50px;/*! float: left; */width: 22%;border: 0;position: relative;top: 12px;left:16px;"></iframe><input type="text" class="form form-control" id="captcha" style="width: 100px;float: left;position: relative;top: 25px;"></div>
+                <button type="button" class="reg1btn btn btn-default btnreg right" style="margin-left:24px;">%%Next%%</button>
+                <button type="button" class="btn cancelbtn right" style="background:none !important;font-size:16px;"><a>%%Cancel%%</a></button>
+            </form>
+            <form id="reg2" class="hidden" role="search">
+                <div class="lbl"><h4>%%You can skip this step%%</h4></div>
+                <div class="clear br2"></div>
+                <div class="ochoba">
+                    <div class="form-group left" style="margin-left:0;float:right;">
+                        <div class="lbl" style="">%%Enter E-mail%% <span style="color:#afafaf"> (%%It is not required, with e-mail you can restore access if you lose your password%%)</span></div>
+                        <div class="btn-group"  role="group" aria-label="...">
+                            <input class="regmail w100 form form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="clear br2"></div>
+                <button type="button" class="btn reg2btn btn-primary right" style="margin-left:24px;">%%Send%%</button>
+                <button type="button" class="btn backbtn right" style="background:none !important;font-size:16px;"><a>%%Back%%</a></button>
+                
+                
+            </form>
+        </div>
+    </div>
+    </body>
+</html>
