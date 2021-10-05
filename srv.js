@@ -342,6 +342,13 @@ connection.config.queryFormat = function (query, values) {
 
 connection.connect();
 
+// update mysql connection every hour
+setInterval(function(){ //don't remove
+    connection.query('SELECT 1',{},function(e,r,f){ 
+        console.log('update connection');
+        console.log(e);
+    });
+}, 1000*60*60);
 
 // Обработка ошибок (игнорирование)
 // --------------------------------------------------------------------------
